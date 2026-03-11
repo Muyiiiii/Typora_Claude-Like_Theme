@@ -1,10 +1,10 @@
-# Claude-like Theme
+# Claude-Like Theme
 
-> [English Version Belo](#english-version)
+> [English Version Below](#english-version)
 
-![light](image/2026-03-11-claude-like-theme/light.png)
+![light](https://raw.githubusercontent.com/Muyiiiii/Typora_Claude-Like_Theme/master/image/2026-03-11-claude-like-theme/light.png)
 
-![dark](image/2026-03-11-claude-like-theme/dark.png)
+![dark](https://raw.githubusercontent.com/Muyiiiii/Typora_Claude-Like_Theme/master/image/2026-03-11-claude-like-theme/dark.png)
 
 一个以 Claude-like 阅读体验为灵感、并针对中文写作重新打磨的 Typora 主题。
 
