@@ -699,3 +699,479 @@ header {
 #top-titlebar {
     border-top-color: var(--window-bg-color) !important;
 }
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * Scrollbar
+ * ──────────────────────────────────────────────────────────
+ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * Outline (TOC) sidebar — tree connector lines
+ * ──────────────────────────────────────────────────────────
+ */
+.outline-content {
+    padding: 12px;
+    font-size: 13px;
+}
+
+.outline-content li {
+    position: relative;
+    z-index: 30;
+    line-height: 1.3 !important;
+    margin-bottom: 0;
+}
+
+/* vertical stem */
+.outline-content li::before {
+    content: '';
+    width: 1px;
+    height: calc(100% + 5px);
+    position: absolute;
+    z-index: 30;
+    left: 0;
+    top: 0;
+    background: var(--border-color);
+}
+
+.outline-content > li:first-of-type::before {
+    top: 0;
+}
+
+.outline-content li a {
+    font-size: 13px !important;
+}
+
+.outline-content li ul {
+    margin-left: 20px;
+    position: relative;
+    z-index: 48;
+}
+
+.outline-content ul li::before {
+    content: '';
+    width: 1px;
+    height: calc(100% + 10px);
+    top: -10px;
+}
+
+.outline-content ul > li:last-of-type::before {
+    content: '';
+    width: 1px;
+    height: 10px;
+    top: -10px;
+}
+
+.outline-content li .outline-item {
+    margin: 0 0 2px 7px;
+    padding: 3px 8px;
+    position: relative;
+    z-index: 50;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+/* erase vertical line behind label text */
+.outline-content .outline-label {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 70;
+    background: var(--side-bar-bg-color);
+    text-decoration: none;
+}
+
+/* L-shaped branch connector */
+.outline-content li .outline-item::before {
+    content: '';
+    width: 12px;
+    height: calc(50% + 10px);
+    position: absolute;
+    z-index: 38;
+    left: -8px;
+    top: -10px;
+    background: transparent;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* first top-level item: top-left corner */
+.outline-content > li:first-of-type > .outline-item::before {
+    top: calc(50% - 1px) !important;
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-bottom-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+}
+
+.outline-content > li:first-of-type > .outline-item::after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    z-index: 35;
+    left: -8px;
+    top: -2px;
+    background: var(--side-bar-bg-color);
+}
+
+/* last item: bottom-left corner */
+.outline-content > li:last-of-type > .outline-item::before,
+.outline-content > li ul > li:last-of-type > .outline-item::before {
+    z-index: 90;
+    background: transparent;
+    border-left: 1px solid var(--border-color);
+    border-top: none !important;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-top-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+}
+
+.outline-content > li:only-of-type > .outline-item::before,
+.outline-content > li:last-of-type::before {
+    display: none;
+}
+
+.outline-content > li:only-of-type {
+    margin-left: -6px;
+}
+
+.outline-expander {
+    padding-left: 0;
+    width: auto;
+    height: 8px;
+    background: transparent;
+}
+
+.outline-expander:before {
+    font-size: 10px;
+    padding: 0 4px 0 2px;
+    margin-top: -2px;
+    margin-left: -2px;
+    background: transparent;
+}
+
+.outline-item:hover,
+.outline-item:hover > .outline-label,
+.outline-item:hover > .outline-expander:before,
+.outline-item:hover > .outline-expander,
+.outline-item-active,
+.outline-item-active > span,
+.outline-item-active > .outline-expander:before {
+    background: var(--item-hover-bg-color) !important;
+    color: var(--accent-color) !important;
+}
+
+.outline-item:hover {
+    z-index: 70;
+}
+
+.outline-item:hover::before,
+.outline-item-active::before {
+    width: 7px !important;
+}
+
+.outline-item-active .outline-expander {
+    font-weight: bold !important;
+}
+
+/* search/filter mode: hide connector lines */
+.ty-on-outline-filter .outline-content li::before,
+.ty-on-outline-filter .outline-content .outline-item::before,
+.ty-on-outline-filter .outline-content .outline-item::after {
+    display: none;
+}
+
+.ty-on-outline-filter .outline-content > li > ul,
+.ty-on-outline-filter .outline-content .outline-item {
+    margin-left: 0;
+}
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * File-library tree — hierarchy connector lines
+ * ──────────────────────────────────────────────────────────
+ */
+#file-library-tree {
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+.file-tree-node {
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.file-node-expanded > .file-node-children {
+    margin-left: 29px;
+}
+
+.file-tree-node > .file-node-background {
+    border-radius: 5px;
+    margin-left: -12px;
+    border: none !important;
+}
+
+#file-library-tree .file-node-root > .file-node-content {
+    margin-left: -3px !important;
+}
+
+#file-library-tree .file-tree-node > .file-node-content {
+    margin-left: -16px;
+}
+
+#file-library-tree .file-node-collapsed > .file-node-content,
+#file-library-tree .file-node-expanded > .file-node-content {
+    margin-left: -9px;
+}
+
+.file-library-node:not(.file-node-root):focus > .file-node-content {
+    outline: none;
+}
+
+.file-library-node:not(.file-node-root):focus > .file-node-background {
+    border: 1px dashed var(--border-color) !important;
+}
+
+.file-library-node.active:not(.file-node-root):focus > .file-node-background {
+    border: 1px dashed var(--accent-color) !important;
+}
+
+#file-library-tree .file-tree-node .file-node-icon {
+    padding-left: 3px;
+}
+
+#file-library-tree .file-node-open-state i {
+    position: relative;
+    z-index: 30;
+    padding-left: 4px;
+}
+
+#file-library-tree .file-node-content > .file-node-icon::before {
+    position: relative;
+    z-index: 35;
+}
+
+/* vertical stem */
+#file-library-tree .file-node-content::before {
+    content: "";
+    position: absolute;
+    z-index: 20;
+    left: -21px;
+    top: -8px;
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: var(--border-color);
+}
+
+/* L-shaped branch connector */
+#file-library-tree .file-node-content > .file-node-icon::after {
+    content: "";
+    position: absolute;
+    z-index: 20;
+    left: -21px;
+    top: 14px;
+    width: 12px;
+    height: 16px;
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    background: transparent;
+}
+
+#file-library-tree .active > .file-node-content > .file-node-icon::after {
+    width: 9px;
+}
+
+#file-library-tree .file-node-expanded > .file-node-content > .file-node-icon::after {
+    left: -21px;
+    top: 15px;
+    width: 8px;
+}
+
+#file-library-tree .file-node-collapsed > .file-node-content > .file-node-icon::after {
+    left: -21px;
+    top: 14px;
+    width: 12px;
+}
+
+/* last sibling: bottom-left corner instead of T-junction */
+#file-library-tree .file-node-children > div:last-of-type > .file-node-content > .file-node-icon::after {
+    border-top: none;
+    border-bottom: 1px solid var(--border-color);
+    border-bottom-left-radius: 3px;
+    top: -1px;
+}
+
+/* clip vertical stem for last sibling */
+#file-library-tree .file-node-children > div:last-of-type > .file-node-content::before {
+    height: 16px;
+    bottom: -16px;
+}
+
+/* root node: no branch connector */
+.file-node-root > .file-node-content > .file-node-icon::after {
+    display: none;
+}
+
+#file-library-tree .file-node-root > .file-node-children {
+    margin-left: 27px;
+}
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * File-library tree — sticky ancestor breadcrumb
+ * Ancestor folders of the active file pin to the top when
+ * scrolling, keeping hierarchy context always visible.
+ * top values assume ~30 px row height; tweak if rows differ.
+ * ──────────────────────────────────────────────────────────
+ */
+#file-library-tree .file-tree-node:not(.file-node-root):has(.file-tree-node.active) > .file-node-content {
+    position: sticky;
+    background: var(--side-bar-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+}
+
+/* depth 1 */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node:has(.file-tree-node.active) > .file-node-content {
+    top: 0;
+    z-index: 103;
+}
+
+/* depth 2 */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node:has(.file-tree-node.active) > .file-node-content {
+    top: 30px;
+    z-index: 102;
+}
+
+/* depth 3 */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node:has(.file-tree-node.active) > .file-node-content {
+    top: 60px;
+    z-index: 101;
+}
+
+/* depth 4 */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node:has(.file-tree-node.active) > .file-node-content {
+    top: 90px;
+    z-index: 100;
+}
+
+/* Fix tree lines broken by position:sticky on .file-node-content:
+   1. ::before loses its containing block (height:100% shrinks to 1 row, left
+      shifts by 9 px because .file-node-content has margin-left:-9px).
+      → Hide it; redraw as .file-tree-node::after (referenced to .file-tree-node,
+        so height:100% still spans the full subtree and left is correct).
+   2. .file-node-icon::after left shifts by 9 px for the same reason.
+      → Compensate: -21px + 9px = -12px. */
+#file-library-tree .file-tree-node:not(.file-node-root):has(.file-tree-node.active) > .file-node-content::before {
+    display: none;
+}
+
+#file-library-tree .file-tree-node:not(.file-node-root):has(.file-tree-node.active)::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    left: -21px;
+    top: -8px;
+    height: 100%;
+    background: var(--border-color);
+    z-index: 20;
+}
+
+/* Last sibling: no downward stem — mirrors the original ::before rule */
+#file-library-tree .file-node-children > div:last-of-type:has(.file-tree-node.active)::after {
+    display: none;
+}
+
+/* L-connector: compensate 9 px left shift */
+#file-library-tree .file-tree-node:not(.file-node-root):has(.file-tree-node.active) > .file-node-content > .file-node-icon::after {
+    left: -12px;
+}
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * File-library tree — sticky active file
+ * Sticky is applied to .file-tree-node.active (the whole row),
+ * NOT .file-node-content. Reason: leaf files have no children
+ * so .file-tree-node height = 1 row — sticking .file-node-content
+ * inside it gives no scrollable room. Sticking .file-tree-node
+ * inside .file-node-children (the tall sibling list) works.
+ * Bonus: .file-tree-node was already position:relative, so
+ * changing to sticky does NOT shift the tree-line ::before
+ * positioning context — no left/height corrections needed.
+ * ──────────────────────────────────────────────────────────
+ */
+#file-library-tree .file-tree-node.active {
+    position: sticky;
+    background: var(--side-bar-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 99;
+}
+
+/* depth 1 — no ancestors sticky */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node.active {
+    top: 0;
+}
+
+/* depth 2 — 1 ancestor above */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node.active {
+    top: 30px;
+}
+
+/* depth 3 — 2 ancestors above */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node.active {
+    top: 60px;
+}
+
+/* depth 4 — 3 ancestors above */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node.active {
+    top: 90px;
+}
+
+/* depth 5 — 4 ancestors above */
+#file-library-tree .file-node-root > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node > .file-node-children > .file-tree-node.active {
+    top: 120px;
+}
+
+/*
+ * ──────────────────────────────────────────────────────────
+ * Search hit highlight
+ * ──────────────────────────────────────────────────────────
+ */
+.md-search-hit {
+    background: rgba(213, 149, 103, 0.25) !important;
+    color: var(--heading-color) !important;
+    border-radius: 2px;
+}
+
+.md-search-select {
+    background: rgba(213, 149, 103, 0.45) !important;
+    color: var(--heading-color) !important;
+    border-radius: 2px;
+}
+
+.ty-file-search-match-text {
+    background-color: rgba(213, 149, 103, 0.32);
+    border-radius: 2px;
+}
