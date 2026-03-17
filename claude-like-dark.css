@@ -546,14 +546,12 @@ tt {
 
 .file-tree-node.active > .file-node-content,
 .outline-item.active {
-    background-color: var(--active-file-bg-color);
-    padding-left: 2px;
-/*
-* 这里只高亮就行，不再通过 border-left 向右平移 2px
-    border-left: 2px solid var(--active-file-border-color);
-* 本来想着要不用 padding-left 呢，但是 padding-left 没办法加颜色，可惜
-    padding-left: 2px solid var(--active-file-border-color);
-*/
+    background-color: #262320 !important; /* solid color, slightly lighter than sidebar */
+    box-shadow: inset 3px 0 0 var(--accent-color); /* Claude-like left bar indicator */
+    font-weight: 500;
+}
+.file-tree-node.active > .file-node-content {
+    color: var(--text-color);
 }
 
 #typora-quick-open {
@@ -958,8 +956,9 @@ header {
  */
 #file-library-tree .file-tree-node:not(.file-node-root):has(.file-tree-node.active) > .file-node-content {
     position: sticky;
-    background: var(--side-bar-bg-color);
-    border-bottom: 1px solid var(--border-color);
+    background: var(--side-bar-bg-color); /* solid dark */
+    border-bottom: 1px solid rgba(255,255,255,0.03); /* very subtle dark mode line */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* subtle depth */
     z-index: 100;
 }
 
@@ -1001,8 +1000,9 @@ header {
  */
 #file-library-tree .file-tree-node.active {
     position: sticky;
-    background: var(--side-bar-bg-color);
-    border-bottom: 1px solid var(--border-color);
+    background: #262320; /* solid dark active background */
+    border-bottom: 1px solid rgba(255,255,255,0.03); /* very subtle dark mode line */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15); /* slightly more depth for active file */
     z-index: 99;
 }
 
