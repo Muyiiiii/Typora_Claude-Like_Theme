@@ -375,6 +375,14 @@ tt {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
+/* Slightly enlarge inline math without affecting block formulas. */
+.md-inline-math,
+.md-inline-math .MathJax,
+.md-inline-math .MathJax_SVG,
+.md-inline-math mjx-container {
+    font-size: 1.08em !important;
+}
+
 .md-fences pre,
 .md-fences code,
 .md-fences tt,
