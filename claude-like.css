@@ -6,8 +6,6 @@
     --window-bg-color: #f6f3ed;
     --select-text-bg-color: #e8ddd0;
     --item-hover-bg-color: rgba(194, 113, 62, 0.08);
-    --active-file-bg-color: rgba(194, 113, 62, 0.12);
-    --active-file-border-color: #d6b79b;
     --code-bg-color: #fcfcfa;
     --code-text-color: #1c1815;
     --code-border-color: #e9e2d8;
@@ -186,7 +184,7 @@ table {
 
 strong,
 b {
-    font-family: var(--font-ui);
+    font-family: var(--font-body);
     font-weight: 700;
     color: var(--heading-color);
     font-synthesis: weight;
@@ -335,7 +333,7 @@ table tbody tr:hover td {
 
 table td strong,
 table th strong {
-    font-family: var(--font-ui);
+    font-family: var(--font-body);
     font-weight: 700;
     color: var(--heading-color);
 }
@@ -373,6 +371,13 @@ tt {
     padding: 0.08em 0.42em 0.1em;
     font-size: 0.9em;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.md-inline-math,
+.md-inline-math .MathJax,
+.md-inline-math .MathJax_SVG,
+.md-inline-math mjx-container {
+    font-size: 1.08em !important;
 }
 
 .md-fences pre,
@@ -535,12 +540,6 @@ tt {
 .ty-side-sort-btn.active,
 .outline-expander:hover {
     background-color: var(--item-hover-bg-color);
-}
-
-.file-tree-node.active > .file-node-content,
-.outline-item.active {
-    background-color: var(--active-file-bg-color);
-    border-left: 2px solid var(--active-file-border-color);
 }
 
 #typora-quick-open {
