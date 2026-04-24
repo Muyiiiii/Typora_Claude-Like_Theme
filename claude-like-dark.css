@@ -542,6 +542,31 @@ tt {
     background-color: var(--item-hover-bg-color);
 }
 
+.file-list-item.active,
+.file-tree-node.active > .file-node-background,
+.outline-item.active {
+    background-color: rgba(213, 149, 103, 0.18);
+    border-left: 0;
+    box-shadow: inset 3px 0 0 var(--accent-color);
+}
+
+.file-list-item.active,
+.file-tree-node.active > .file-node-content,
+.outline-item.active {
+    color: var(--heading-color);
+}
+
+.file-list-item-file-ext-part,
+.file-node-title-ext-part {
+    opacity: 1;
+    color: var(--text-color);
+}
+
+.file-list-item.active .file-list-item-file-ext-part,
+.file-tree-node.active .file-node-title-ext-part {
+    color: var(--heading-color);
+}
+
 #typora-quick-open {
     border: 1px solid var(--border-color);
     background-color: #1b1714;
