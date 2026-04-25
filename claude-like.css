@@ -535,6 +535,51 @@ tt {
     background-color: var(--side-bar-bg-color);
 }
 
+.os-windows #typora-sidebar,
+.os-windows #sidebar-content,
+.os-windows #file-library,
+.os-windows #file-library-list,
+.os-windows #file-library-tree,
+.os-windows #outline-content,
+.os-windows .sidebar-content,
+.os-windows .sidebar-content-content,
+.os-windows .file-list-item,
+.os-windows .file-node-content,
+.os-windows .outline-item,
+.os-windows .outline-label,
+.os-windows .ty-side-sort-btn {
+    font-family: var(--font-body) !important;
+    color: var(--text-color);
+}
+
+.os-windows #file-library-list *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+.os-windows #file-library-tree *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+.os-windows #outline-content *:not(.fa):not(.outline-expander),
+.os-windows .sidebar-tabs,
+.os-windows .sidebar-tabs * {
+    font-family: var(--font-body) !important;
+}
+
+.os-windows .file-list-item-file-name,
+.os-windows .file-list-item-file-ext-part,
+.os-windows .file-list-item-summary,
+.os-windows .file-list-item-parent-loc,
+.os-windows .file-node-title,
+.os-windows .file-node-title-name-part,
+.os-windows .file-node-title-ext-part,
+.os-windows .outline-label,
+.os-windows .outline-item span {
+    font-family: var(--font-body) !important;
+}
+
+.os-windows .file-list-item-summary,
+.os-windows .file-list-item-parent-loc,
+.os-windows .file-node-icon,
+.os-windows .file-node-open-state,
+.os-windows .outline-expander {
+    color: var(--control-text-color);
+}
+
 .outline-item:hover,
 .file-list-item:hover,
 .ty-side-sort-btn.active,
@@ -588,6 +633,136 @@ header,
 .megamenu-content,
 footer {
     font-family: var(--font-ui);
+}
+
+.os-windows #megamenu-menu-sidebar,
+.os-windows .megamenu-menu,
+.os-windows .megamenu-menu-header,
+.os-windows #megamenu-menu-list,
+.os-windows .megamenu-content {
+    font-family: var(--font-body) !important;
+    background-color: var(--window-bg-color);
+    color: var(--text-color);
+}
+
+.os-windows header,
+.os-windows.megamenu-opened header,
+.os-windows #top-titlebar,
+.os-windows footer,
+.os-windows footer.ty-footer,
+.os-windows .ty-footer {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+}
+
+.os-windows #top-titlebar > *,
+.os-windows #top-titlebar .titlebar-button,
+.os-windows #top-titlebar .window-control {
+    background-color: transparent;
+}
+
+.os-windows header > *:not(#top-titlebar):not(.titlebar-button):not(.window-control),
+.os-windows header > *:not(#top-titlebar):not(.titlebar-button):not(.window-control) *:not(.fa),
+.os-windows footer,
+.os-windows footer *:not(.fa),
+.os-windows .ty-footer,
+.os-windows .ty-footer *:not(.fa) {
+    font-family: var(--font-body) !important;
+}
+
+.os-windows #megamenu-menu-sidebar,
+.os-windows #megamenu-menu-sidebar *:not(.fa),
+.os-windows .megamenu-menu-header,
+.os-windows .megamenu-menu-header *:not(.fa),
+.os-windows #megamenu-menu-list,
+.os-windows #megamenu-menu-list *:not(.fa),
+.os-windows .megamenu-menu-panel,
+.os-windows .megamenu-menu-panel *:not(.fa) {
+    font-family: var(--font-body) !important;
+}
+
+.os-windows.megamenu-opened header,
+.os-windows #top-titlebar,
+.os-windows #megamenu-menu-sidebar,
+.os-windows .megamenu-menu,
+.os-windows .megamenu-menu-header,
+.os-windows #megamenu-menu-list,
+.os-windows.megamenu-opened content,
+.os-windows #megamenu-content,
+.os-windows .megamenu-content,
+.os-windows footer.ty-footer {
+    background-image: none !important;
+}
+
+.os-windows.megamenu-opened content,
+.os-windows #megamenu-content,
+.os-windows .megamenu-content {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+}
+
+.os-windows.megamenu-opened #typora-sidebar {
+    pointer-events: none !important;
+}
+
+.os-windows.megamenu-opened #typora-sidebar-resizer {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.os-windows #megamenu-menu-sidebar,
+.os-windows .megamenu-menu {
+    box-shadow: none;
+    border-right: 1px solid var(--border-color);
+}
+
+.os-windows .megamenu-menu-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.os-windows #megamenu-back-btn,
+.os-windows .megamenu-menu-header #megamenu-menu-header-title,
+.os-windows .megamenu-menu-header #megamenu-menu-header-title:before {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.os-windows #megamenu-menu-list li,
+.os-windows #megamenu-menu-list li a,
+.os-windows .megamenu-menu-list li,
+.os-windows .megamenu-menu-list li a {
+    color: var(--text-color);
+    opacity: 1;
+}
+
+.os-windows #megamenu-menu-list li a:hover,
+.os-windows #megamenu-menu-list li a.active,
+.os-windows .megamenu-menu-list li a:hover,
+.os-windows .megamenu-menu-list li a.active {
+    color: var(--heading-color);
+    background-color: var(--item-hover-bg-color);
+}
+
+.os-windows #megamenu-menu-list li.disabled,
+.os-windows #megamenu-menu-list li.disabled a,
+.os-windows .megamenu-menu-list li.disabled,
+.os-windows .megamenu-menu-list li.disabled a {
+    color: var(--control-text-color);
+    opacity: 0.68;
+}
+
+.os-windows .megamenu-menu-panel,
+.os-windows .megamenu-menu-panel table,
+.os-windows .megamenu-menu-panel tbody,
+.os-windows .megamenu-menu-panel tr,
+.os-windows .megamenu-menu-panel td {
+    color: var(--text-color);
+}
+
+.os-windows .long-btn:hover,
+.os-windows .megamenu-menu-panel tbody tr:hover td {
+    background-color: var(--item-hover-bg-color);
 }
 
 .file-node-content:hover .file-node-icon,
