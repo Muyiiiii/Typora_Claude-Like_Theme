@@ -664,10 +664,38 @@ footer {
 .os-windows header > *:not(#top-titlebar):not(.titlebar-button):not(.window-control),
 .os-windows header > *:not(#top-titlebar):not(.titlebar-button):not(.window-control) *:not(.fa),
 .os-windows footer,
-.os-windows footer *:not(.fa),
-.os-windows .ty-footer,
-.os-windows .ty-footer *:not(.fa) {
+.os-windows .ty-footer {
     font-family: var(--font-body) !important;
+}
+
+.os-windows footer button,
+.os-windows footer .btn,
+.os-windows footer [class*="btn"],
+.os-windows footer [class*="button"],
+.os-windows .ty-footer button,
+.os-windows .ty-footer .btn,
+.os-windows .ty-footer [class*="btn"],
+.os-windows .ty-footer [class*="button"] {
+    font-family: var(--font-ui) !important;
+}
+
+.os-windows footer .ty-icon,
+.os-windows footer .ty-icon:before,
+.os-windows .ty-footer .ty-icon,
+.os-windows .ty-footer .ty-icon:before,
+.os-windows #ty-sidebar-footer .ty-icon,
+.os-windows #ty-sidebar-footer .ty-icon:before,
+.os-windows #ty-sidebar-footer .ty-add:before,
+.os-windows #ty-sidebar-footer .ty-three-cells:before,
+.os-windows #ty-sidebar-footer .ty-file-tree:before,
+.os-windows #typora-sidebar .sidebar-footer .ty-icon,
+.os-windows #typora-sidebar .sidebar-footer .ty-icon:before {
+    font-family: "typora-icon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 }
 
 .os-windows #megamenu-menu-sidebar,
@@ -758,6 +786,12 @@ footer {
 .os-windows .megamenu-menu-panel tr,
 .os-windows .megamenu-menu-panel td {
     color: var(--text-color);
+}
+
+.os-windows .megamenu-menu-panel table tr,
+.os-windows .megamenu-menu-panel table tr:nth-child(2n),
+.os-windows .megamenu-menu-panel table td {
+    background-color: transparent !important;
 }
 
 .os-windows .long-btn:hover,
