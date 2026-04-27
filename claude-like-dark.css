@@ -535,48 +535,48 @@ tt {
     background-color: var(--side-bar-bg-color);
 }
 
-.os-windows #typora-sidebar,
-.os-windows #sidebar-content,
-.os-windows #file-library,
-.os-windows #file-library-list,
-.os-windows #file-library-tree,
-.os-windows #outline-content,
-.os-windows .sidebar-content,
-.os-windows .sidebar-content-content,
-.os-windows .file-list-item,
-.os-windows .file-node-content,
-.os-windows .outline-item,
-.os-windows .outline-label,
-.os-windows .ty-side-sort-btn {
+#typora-sidebar,
+#sidebar-content,
+#file-library,
+#file-library-list,
+#file-library-tree,
+#outline-content,
+.sidebar-content,
+.sidebar-content-content,
+.file-list-item,
+.file-node-content,
+.outline-item,
+.outline-label,
+.ty-side-sort-btn {
     font-family: var(--font-ui) !important;
     color: var(--text-color);
 }
 
-.os-windows #file-library-list *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
-.os-windows #file-library-tree *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
-.os-windows #outline-content *:not(.fa):not(.outline-expander),
-.os-windows .sidebar-tabs,
-.os-windows .sidebar-tabs * {
+#file-library-list *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+#file-library-tree *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+#outline-content *:not(.fa):not(.outline-expander),
+.sidebar-tabs,
+.sidebar-tabs * {
     font-family: var(--font-ui) !important;
 }
 
-.os-windows .file-list-item-file-name,
-.os-windows .file-list-item-file-ext-part,
-.os-windows .file-list-item-summary,
-.os-windows .file-list-item-parent-loc,
-.os-windows .file-node-title,
-.os-windows .file-node-title-name-part,
-.os-windows .file-node-title-ext-part,
-.os-windows .outline-label,
-.os-windows .outline-item span {
+.file-list-item-file-name,
+.file-list-item-file-ext-part,
+.file-list-item-summary,
+.file-list-item-parent-loc,
+.file-node-title,
+.file-node-title-name-part,
+.file-node-title-ext-part,
+.outline-label,
+.outline-item span {
     font-family: var(--font-ui) !important;
 }
 
-.os-windows .file-list-item-summary,
-.os-windows .file-list-item-parent-loc,
-.os-windows .file-node-icon,
-.os-windows .file-node-open-state,
-.os-windows .outline-expander {
+.file-list-item-summary,
+.file-list-item-parent-loc,
+.file-node-icon,
+.file-node-open-state,
+.outline-expander {
     color: var(--control-text-color);
 }
 
