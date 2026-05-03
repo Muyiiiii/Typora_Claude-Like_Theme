@@ -321,3 +321,7 @@ Claude is a trademark of Anthropic, PBC. This project is not affiliated with, en
 ## Trademark Notice
 
 Claude is a trademark of Anthropic, PBC. This project is not affiliated with, endorsed by, or sponsored by Anthropic. The name "Claude-like" refers to the visual atmosphere that inspired this theme, not to any official product or brand affiliation.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Muyiiiii/Typora_Claude-Like_Theme&type=Date)](https://star-history.com/#Muyiiiii/Typora_Claude-Like_Theme&Date)
